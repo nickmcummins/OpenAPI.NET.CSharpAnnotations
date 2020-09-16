@@ -21,8 +21,10 @@ namespace Microsoft.OpenApi.CSharpAnnotations.DocumentGeneration.Extensions
             {
                 [typeof(bool)] = () => new OpenApiSchema {Type = "boolean"},
                 [typeof(byte)] = () => new OpenApiSchema {Type = "string", Format = "byte"},
+                [typeof(SByte)] = () => new OpenApiSchema {Type = "integer", Format = "int32", Minimum = -128, Maximum = 127},
                 [typeof(int)] = () => new OpenApiSchema {Type = "integer", Format = "int32"},
                 [typeof(uint)] = () => new OpenApiSchema {Type = "integer", Format = "int32"},
+                [typeof(short)] = () => new OpenApiSchema {Type = "integer", Format = "int32", Minimum = -32768, Maximum = 32767},
                 [typeof(ushort)] = () => new OpenApiSchema { Type = "integer", Format = "int32" },
                 [typeof(long)] = () => new OpenApiSchema {Type = "integer", Format = "int64"},
                 [typeof(ulong)] = () => new OpenApiSchema {Type = "integer", Format = "int64"},
@@ -36,8 +38,10 @@ namespace Microsoft.OpenApi.CSharpAnnotations.DocumentGeneration.Extensions
 
                 [typeof(bool?)] = () => new OpenApiSchema {Type = "boolean", Nullable = true},
                 [typeof(byte?)] = () => new OpenApiSchema {Type = "string", Format = "byte", Nullable = true},
+                [typeof(SByte?)] = () => new OpenApiSchema { Type = "integer", Format = "int32", Minimum = -128, Maximum = 127, Nullable = true },
                 [typeof(int?)] = () => new OpenApiSchema {Type = "integer", Format = "int32", Nullable = true},
                 [typeof(uint?)] = () => new OpenApiSchema {Type = "integer", Format = "int32", Nullable = true},
+                [typeof(short?)] = () => new OpenApiSchema { Type = "integer", Format = "int32", Minimum = -32768, Maximum = 32767 },
                 [typeof(ushort?)] = () => new OpenApiSchema { Type = "integer", Format = "int32", Nullable = true },
                 [typeof(long?)] = () => new OpenApiSchema {Type = "integer", Format = "int64", Nullable = true},
                 [typeof(ulong?)] = () => new OpenApiSchema {Type = "integer", Format = "int64", Nullable = true},
